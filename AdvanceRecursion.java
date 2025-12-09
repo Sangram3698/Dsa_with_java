@@ -14,9 +14,29 @@ class Permutaion{
     }
 }
 
+class CountPath{
+    public int pathCount(int m,int n,int i,int j){
+       if(i==m||j==n){
+        return 0;
+       }
+        if (i==m-1 && j==n-1) {
+            return 1;
+        }
+
+        int downPath=pathCount(m, n, i+1, j);
+        int rightPath=pathCount(m, n, i, j+1);
+
+        return downPath+rightPath;
+    }
+}
+
 public class AdvanceRecursion {
     public static void main(String args[]){
         Permutaion p=new Permutaion();
         p.permutation("", "abc");
+        CountPath cp=new CountPath();
+        int totalPaths=cp.pathCount(3, 3, 0, 0);
+        System.out.println("The max path for 3,3 matrix is "+totalPaths);
     }
+
 }
