@@ -7,7 +7,7 @@ class Solution{
                 return false;
             }
         }
-        //vertical
+        //vertical check
         for(int j=0;j<board.length;j++){
             if(board[j][col]=='Q'){
                 return false;
@@ -53,9 +53,9 @@ class Solution{
             row="";
             for(int j=0;j<board[0].length;j++){
                if(board[i][j]=='Q'){
-                row+='Q';
+                row+=" Q ";
                }else{
-                row+="_";
+                row+=" _ ";
                }
             }
             newBoard.add(row);
